@@ -1,0 +1,276 @@
+
+html {
+  margin: 0;
+  height: 100%;
+	background: #fff;
+	font-family: var(--barlow-font);
+	color: #010101 !important;
+}
+
+body {
+  margin: 0;
+	height: 100%;
+  font-family: var(--barlow-font);
+	color: #010101 !important;
+}
+
+p {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--barlow-font);
+  font-weight: 200 !important;
+  line-height: 2.3 !important;
+  color: #010101 !important;
+  backface-visibility: hidden !important;
+}
+
+p a {
+  outline: none !important;
+  color: #010101 !important;
+}
+
+
+.header {
+  position: relative !important;
+  background: transparent !important;
+  z-index: 2000;
+}
+
+.header h1 {
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 2;
+    font-family: var(--barlow-font);
+    font-weight: 200 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.16em !important;
+    backface-visibility: hidden !important;
+}
+
+.icon {
+  padding: 0 !important;
+  font-weight: 200 !important;
+  z-index: 4000 !important;
+}
+
+.navigation {
+   position: fixed !important;
+   top: 0 !important;
+   left: 0 !important;
+   background: #231712 !important;
+   width: 100vw !important;
+   height: 100vh !important;
+   z-index: 2000 !important;
+}
+
+
+.menu {
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  font-family: var(--barlow-font);
+  font-weight: 200 !important;
+}
+
+.menu {
+  color: white !important;
+  text-align: center !important;
+}
+
+.menu a {
+  font-family: var(--barlow-font);
+  width: 100% !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.slider {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+.each-slide {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+
+h1.title {
+  margin: 0 !important;
+  line-height: 2;
+  font-family: var(--barlow-font);
+  font-weight: 200 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  backface-visibility: hidden !important;
+}
+
+h2.subtitle {
+  border-bottom: .0625rem solid #e5e5e5;
+  font-family: var(--barlow-font);
+  font-weight: 300 !important;
+  font-variant: small-caps;
+  letter-spacing: .03rem;
+  color: #010101;
+}
+
+.gallery, .about, .giclee, .canvas, .exhibitions, .press, .contact {
+  font-family: var(--barlow-font);
+  font-weight: 400;
+  color: #010101;
+}
+
+.details {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  font-family: var(--barlow-font) !important;
+}
+
+.details p {
+  font-weight: 200;
+  text-align: left !important;
+  color: #585858 !important;
+}
+
+.details p.name {
+  font-weight: 300 !important;
+  text-transform: uppercase;
+}
+
+.details p.size::before {
+content: 'Size:  ';
+}
+
+.details p.size::after {
+  content: ' cm';
+}
+
+.details p.printsize::before {
+  content: 'Print Size:  ';
+}
+  
+.details p.printsize::after {
+    content: ' cm';
+}
+
+.details p.mountedsize::before {
+  content: 'Mounted Size:  ';
+}
+  
+.details p.mountedsize::after {
+    content: ' cm';
+}
+
+.details p.framedsize::before {
+  content: 'Framed Size:  ';
+}
+  
+.details p.framedsize::after {
+    content: ' cm';
+}
+
+.details p.mountedprice::before {
+  content: 'Mounted Price:  £';
+}
+
+.details p.framedprice::before {
+  content: 'Framed Price:  £';
+}
+
+.details p.price::before {
+  content: 'Price:  £';
+}
+
+.details p.sold {
+  font-weight: 300;
+}
+
+.exhibitions {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  font-family: var(--barlow-font) !important;
+}
+
+.exhibitions p {
+  font-weight: 300;
+  line-height: 1.5 !important;
+  text-align: left !important;
+}
+
+.press {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+  font-family: var(--barlow-font) !important;
+}
+
+.press h3 {
+  padding-top: 0 !important;
+  font-family: var(--barlow-font);
+  font-weight: 400 !important;
+  font-variant: small-caps !important;
+  letter-spacing: .03rem;
+  line-height: 1.5;
+  color: #010101;
+}
+
+.press  p {
+  margin-bottom: 1rem !important;
+  font-weight: 300;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  color: #010101;
+}
+
+.press a {
+  font-weight: 400 !important;
+  color: #010101;
+}
+
+
+.contact img {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.contact h4 {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #454545;
+}
+
+.contact p {
+  color: #454545;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+.gallery h4.title {
+  font-family: var(--barlow-font);
+  font-weight: 200 !important;
+  font-style: italic !important;
+  line-height: 1;
+  font-size: 0.8rem !important;
+  -webkit-font-smoothing: antialiased !important;
+  color: #010101;
+}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+html {
+  scroll-behavior: auto;
+}
+}
