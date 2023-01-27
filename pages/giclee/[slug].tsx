@@ -113,6 +113,6 @@ export const getStaticPaths = async () => {
   const paths = await client.fetch(groq`*[_type == "giclee" && defined(slug.current)][].slug.current`)
   return {
     paths: paths.map((slug: {slug: any}) => ({params: {slug}})),
-    fallback: true,
+    fallback: 'blocking',
   }
 }
