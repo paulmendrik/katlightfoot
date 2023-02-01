@@ -21,7 +21,7 @@ show: { opacity: 1 }
 
 const container = {
 hidden: { opacity: 0 },
-show: { opacity: 1, transition: { staggerChildren: 1, type: 'tween', duration: 0.1, ease: 'easeInOut' } }
+show: { opacity: 1, transition: { type: 'tween', duration: 0.1, ease: 'easeInOut' } }
 }
 
   return (
@@ -29,7 +29,7 @@ show: { opacity: 1, transition: { staggerChildren: 1, type: 'tween', duration: 0
   <GalleryLayout>
   <Box>
   <Text as={'h1'} className={'title'} pt={['1.5rem', '2rem']} fontSize={['1.2rem','1.4rem']} >Canvas Prints</Text>
-  <Text as={'h2'} className="subtitle" fontSize={['1.25rem','1.5rem']} >The canvas prints are all hand finished and signed in oil</Text>
+  <Text as={'h2'} className="subtitle" py={['1.5rem', '2rem']} fontSize={['1.1rem','1.2rem']} >The canvas prints are all hand finished and signed in oil</Text>
   </Box>
   <SimpleGrid
   className='gallery'
@@ -44,7 +44,7 @@ show: { opacity: 1, transition: { staggerChildren: 1, type: 'tween', duration: 0
   >
   {images.map((image: { _id: any; title: string ; image: any; slug: any; order: any; }) =>
   <Box key={image._id} as={motion.div} variants={item} id={image.order} >
-  <Link  href={`/canvas/${image.slug}`} scroll={false}>
+  <Link  href={`/canvas/${image.slug}`}>
   <AspectRatio  ratio={1/1}>
   <Image
   src={urlFor(image.image).url()}

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageLayout } from '../../layouts';
-import { Box,Card, CardBody, SimpleGrid, Text, Square, Stack } from '@chakra-ui/react';
+import { Box,Card, CardBody, SimpleGrid, Text,  Stack } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
 import { getAllPressArticles } from '../../lib/api'
 
@@ -26,7 +26,6 @@ Press
 <Fragment>
 
 
-<SimpleGrid  mt={['1rem', '2rem']}>
 
 {props.map((prop: { _id: any; title: string; image: any, intro: any; slug: any; }) => 
 <Card
@@ -37,7 +36,7 @@ Press
   variant='unstyled'
 >
 
-<Box>
+<Box w={['100%', '25%']}>
 <Image 
 src={urlFor(prop.image).url()} 
 width={500} 
@@ -46,20 +45,18 @@ alt={prop.title}
 />
 </Box>
 
-<Stack>
-<CardBody py={['1rem', '0']} >  
+<Box py={['1rem', '0']} pl={['0', '1rem']} w={['100%', '75%']}>
+<Stack>  
 <Text as={'h3'}  fontSize={['1.125rem','1.25rem']} > {prop.title} </Text>
 <Text as={'p'}  fontSize={['1rem','1rem']} > {prop.intro} </Text>
-
 <Link  href={`/press/${prop.slug}`}  scroll={false}>Read More</Link>
-
-</CardBody>
 </Stack>
+</Box>
 </Card>
 
 )}
 
-</SimpleGrid>
+
 
 </Fragment> 
 

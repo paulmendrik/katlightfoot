@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
 import { Close, Next, Previous } from '../../components';
@@ -26,9 +27,16 @@ return (
  : null }
 
 
-<Card className='details' direction={['column-reverse', 'row']} >
+<Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >
 
-<Box  pt={['40px','100px']} pb={['50px','50px']} px={['20px','0']} width={['100%','33.5%']}> 
+<Box  py={['40px', '80px']}  width={['100%','25%']}> 
+<AnimatePresence>
+<motion.div
+initial={{ y: 100, opacity: 0 }}
+animate={{ y: 0, opacity: 1 }}
+exit={{ y: 100, opacity: 0 }}
+transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
+>
 <Flex alignContent={'center'} alignItems={'center'} height={'100%'}>
 <VStack alignItems={'start'}>
 
@@ -46,15 +54,25 @@ return (
 
 </VStack>
 </Flex>
+</motion.div>
+</AnimatePresence>
 </Box>
 
-<Box py={['20px','100px']} mt={['50px', '0']} width={['100%','65.5%']}>
-<Box px={['20px','50px']} width={'full'}>
+<Box className='painting'  width={['100%','75%']} >
+<AnimatePresence>
+<motion.div 
+initial={{ opacity: 0, scale: 0 }}
+animate={{ opacity: 1, scale: 1 }}
+exit={{ opacity: 0, scale: 0 }}
+transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
+>
 <AspectRatio   ratio={1}>
 <Image src={urlFor(data.image).url()} />
 </AspectRatio>
+</motion.div>
+</AnimatePresence>
 </Box>
-</Box>
+
 </Card>
 </PaintingLayout>
 </Fragment>

@@ -107,15 +107,16 @@ h1.title {
   text-transform: uppercase !important;
   letter-spacing: 0.16em !important;
   backface-visibility: hidden !important;
+  color: #010101 !important;
 }
 
 h2.subtitle {
-  border-bottom: .0625rem solid #e5e5e5;
   font-family: var(--barlow-font);
-  font-weight: 300 !important;
+  font-weight: 100 !important;
   font-variant: small-caps;
-  letter-spacing: .03rem;
-  color: #010101;
+  line-height: 2;
+  letter-spacing: 0.16em !important;
+  color: #010101 !important;
 }
 
 .gallery, .about, .giclee, .canvas, .exhibitions, .press, .contact {
@@ -140,7 +141,7 @@ h2.subtitle {
 }
 
 .details p.name {
-  font-weight: 300 !important;
+  font-weight: 500 !important;
   text-transform: uppercase;
 }
 
@@ -153,7 +154,7 @@ content: 'Size:  ';
 }
 
 .details p.printsize::before {
-  content: 'Print Size:  ';
+  content: 'Size:  ';
 }
   
 .details p.printsize::after {
@@ -161,7 +162,7 @@ content: 'Size:  ';
 }
 
 .details p.mountedsize::before {
-  content: 'Mounted Size:  ';
+  content: 'Mounted:  ';
 }
   
 .details p.mountedsize::after {
@@ -169,7 +170,7 @@ content: 'Size:  ';
 }
 
 .details p.framedsize::before {
-  content: 'Framed Size:  ';
+  content: 'Framed:  ';
 }
   
 .details p.framedsize::after {

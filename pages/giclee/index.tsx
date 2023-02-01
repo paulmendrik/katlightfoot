@@ -11,7 +11,6 @@ type Props = {
   images: any;
 }
 
-
 export default function Giclee({ images }: Props) {
 
   const item = {
@@ -21,10 +20,11 @@ export default function Giclee({ images }: Props) {
     
     const container = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 1, type: 'tween', duration: 0.1, ease: 'easeInOut' } }
+    show: { opacity: 1, transition: { type: 'tween', duration: 0.1, ease: 'easeInOut' } }
     }
 
     return (
+      
     <Fragment>
     <GalleryLayout>
     <Box>
@@ -43,7 +43,7 @@ export default function Giclee({ images }: Props) {
     >
     {images.map((image: { _id: any; title: string ; image: any; slug: any; order: any; }) =>
     <Box key={image._id} as={motion.div} variants={item} id={image.order} >
-    <Link  href={`/giclee/${image.slug}`} scroll={false}>
+    <Link  href={`/giclee/${image.slug}`}>
     <AspectRatio  ratio={1/1}>
     <Image
     src={urlFor(image.image).url()}

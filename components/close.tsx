@@ -14,7 +14,7 @@ return (
 
 
 <Fragment>
-<Link  href={props} scroll={false} >
+<Link  href={props} >
 <Icon as={TfiClose}
 position={'fixed'}
 top={['30px','30px']}

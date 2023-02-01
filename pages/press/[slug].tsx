@@ -22,7 +22,7 @@ return (
 <Text as={'h1'} className="title" pt={['1.5rem', '2rem']} fontSize={['1.2rem','1.4rem']} >{data.title}</Text>
 </Box>
 
-<Box className="press" mt={['1.5rem', '2rem']} > 
+<Box className="press" mt={['1.5rem', '2rem']} mb={['2rem', '2rem']} > 
 <Box  fontSize={['1rem', '1rem']}>
 <Box float={['none', 'left']} mr={['0', '1.5rem']} mb={['1rem', '1.5rem']} >
 <Image  src={urlFor(data.image).url()} width={400} height={400} alt={data.title} /> 

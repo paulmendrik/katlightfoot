@@ -7,7 +7,7 @@ export const PaintingLayout = ({ children }: any) => {
 
 return (
 <Fragment>
-<Box px={['0','100px']}>
+<Box px={['20px','80px']} >
 {children}
 </Box>
 </Fragment>   

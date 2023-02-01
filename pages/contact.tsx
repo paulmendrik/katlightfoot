@@ -20,7 +20,7 @@ return (
 <Box className="contact">
 {props.map((prop: { _id: any; image: any; title: string; content: any; }) =>
 <Card key={prop._id} mt={['0.5rem', '2rem']} direction={{ base: 'column', sm: 'row' }} variant='unstyled'>
-<Box>
+<Box  w={['100%', '50%']}>
 <Image 
 src={urlFor(prop.image).url()} 
 width={500} 
@@ -28,7 +28,7 @@ height={500}
 alt={prop.title} 
 />
 </Box>
-<CardBody pl={['0','2rem']} py={['1rem', '0']} >
+<CardBody pl={['0','2rem']} py={['1rem', '0']}  w={['100%', '50%']} >
 <PortableText value={prop.content} /> 
 </CardBody>
 </Card>
