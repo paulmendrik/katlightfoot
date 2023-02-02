@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
@@ -13,6 +14,8 @@ type Props = {
 
 export default function Painting({ data }: Props) {
 
+const router = useRouter();
+
 return (
 <Fragment>
 <PaintingLayout>
@@ -20,11 +23,11 @@ return (
 <Close props={`/giclee/#${data.order}`}/>
 
 {data.previous ? 
-<Previous props={`/giclee/${data.previous.slug}`}/>
+<Previous props={data.previous.slug}/>
  : null }
 
 {data.next ?
-<Next props={`/giclee/${data.next.slug}`} />
+<Next props={data.next.slug} />
  : null }
 
 <Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >
@@ -32,7 +35,7 @@ return (
 <Box  py={['40px', '80px']}  width={['100%','25%']}> 
 <AnimatePresence>
 <motion.div
-key={`/giclee/${data.slug}`}
+key={router.asPath}
 initial={{ y: 100, opacity: 0 }}
 animate={{ y: 0, opacity: 1 }}
 exit={{ y: 100, opacity: 0 }}
@@ -77,7 +80,7 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 <Box className='painting'  width={['100%','75%']} >
 <AnimatePresence>
 <motion.div 
-key={`/giclee/${data.slug}`}
+key={router.asPath}
 initial={{ opacity: 0, scale: 0 }}
 animate={{ opacity: 1, scale: 1 }}
 exit={{ opacity: 0, scale: 0 }}
