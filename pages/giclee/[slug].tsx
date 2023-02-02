@@ -32,7 +32,7 @@ return (
 <Box  py={['40px', '80px']}  width={['100%','25%']}> 
 <AnimatePresence>
 <motion.div
-key={`/giclee/${data.previous.slug || data.next.slug }`}
+key={`/giclee/${data.slug}`}
 initial={{ y: 100, opacity: 0 }}
 animate={{ y: 0, opacity: 1 }}
 exit={{ y: 100, opacity: 0 }}
@@ -77,7 +77,7 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 <Box className='painting'  width={['100%','75%']} >
 <AnimatePresence>
 <motion.div 
-key={`/giclee/${data.previous.slug || data.next.slug }`}
+key={`/giclee/${data.slug}`}
 initial={{ opacity: 0, scale: 0 }}
 animate={{ opacity: 1, scale: 1 }}
 exit={{ opacity: 0, scale: 0 }}
