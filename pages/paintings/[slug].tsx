@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
@@ -18,14 +18,14 @@ export default function Painting({ data }: Props) {
 return (
 <Fragment>
 <PaintingLayout>
-<Close props={'/paintings/'}/>
+<Close props={`/paintings/#${data.order}`}/>
 
 {data.previous ? 
-<Previous props={data.previous.slug} />
+<Previous props={`/paintings/${data.previous.slug}`}/>
  : null }
 
 {data.next ?
-<Next props={data.next.slug} />
+<Next props={`/paintings/${data.next.slug}`} />
  : null }
 
 <Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >

@@ -17,14 +17,14 @@ return (
 <Fragment>
 <PaintingLayout>
 
-<Close props={'/giclee/'}/>
+<Close props={`/giclee/#${data.order}`}/>
 
 {data.previous ? 
-<Previous props={data.previous.slug} />
+<Previous props={`/giclee/${data.previous.slug}`}/>
  : null }
 
 {data.next ?
-<Next props={data.next.slug} />
+<Next props={`/giclee/${data.next.slug}`} />
  : null }
 
 <Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >

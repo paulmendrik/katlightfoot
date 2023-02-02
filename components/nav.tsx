@@ -15,7 +15,9 @@ const [ isOpen, setOpen ] = useState(false);
 
 const router = useRouter()
 
-const black =  ( router.asPath != '/')
+const black =  ( router.route != '/')
+
+
 
 const item = {
     hidden: { opacity: 0 },

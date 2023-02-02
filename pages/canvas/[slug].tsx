@@ -16,14 +16,15 @@ export default function Painting({ data }: Props) {
 return (
 <Fragment>
 <PaintingLayout>
-<Close props={'/canvas/'}/>
+
+<Close props={`/canvas/#${data.order}`}/>
 
 {data.previous ? 
-<Previous props={data.previous.slug} />
+<Previous props={`/canvas/${data.previous.slug}`}/>
  : null }
 
 {data.next ?
-<Next props={data.next.slug} />
+<Next props={`/canvas/${data.next.slug}`} />
  : null }
 
 

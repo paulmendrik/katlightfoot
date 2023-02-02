@@ -16,7 +16,7 @@ return (
 
 
 <Fragment>
-<motion.div onTap={() => window.location.reload()} >
+<motion.div onClick={() => window.location.reload()} >
 <Link  href={props} >
 <Icon as={TfiAngleLeft}
 position={'fixed'}

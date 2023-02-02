@@ -8,7 +8,8 @@ import { Flex, Spacer, Text } from '@chakra-ui/react';
 export const Header = () => {
 
 const router = useRouter();
-const black =  ( router.asPath != '/')
+const black =  ( router.route != '/')
+
 
 return (
 
