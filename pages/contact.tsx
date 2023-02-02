@@ -20,7 +20,7 @@ return (
 <Box className="contact">
 {props.map((prop: { _id: any; image: any; title: string; content: any; }) =>
 <Card key={prop._id} mt={['0.5rem', '2rem']} direction={{ base: 'column', sm: 'row' }} variant='unstyled'>
-<Box  w={['100%', '50%']}>
+<Box mb={['0','1rem']}  w={['100%', 'auto']}>
 <Image 
 src={urlFor(prop.image).url()} 
 width={500} 

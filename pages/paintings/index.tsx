@@ -46,7 +46,7 @@ spacingY={['10px', '10px']}
 
 {images.map((image: { _id: any; title: string ; image: any; slug: any; order: any; }) =>
 <Box key={image._id} as={motion.div} variants={item} id={image.order} >
-<Link  href={`/paintings/${image.slug}`} >
+<Link  href={`/paintings/${image.slug}`}>
 <AspectRatio  ratio={1/1}>
 <Image
 src={urlFor(image.image).url()}

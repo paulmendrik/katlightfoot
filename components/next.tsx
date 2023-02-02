@@ -16,7 +16,7 @@ return (
 
 
 <Fragment>
-<motion.div onClick={() => window.location.reload()} >
+<motion.div>
 <Link  href={props} >
 <Icon as={TfiAngleRight}
 position={'fixed'}

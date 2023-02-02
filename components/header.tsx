@@ -16,11 +16,14 @@ return (
 <Fragment>
 <Flex 
 className={'header'}
+position={'relative'}
+top={'0'}
 py={['20px', '28px']} 
 background={black ? 'transparent' : '#ffffff'} 
 borderBottom={black ? '1px #ebebeb solid' : 'none'}
 justifyContent={"center"} 
-alignItems={"center"} 
+alignItems={"center"}
+zIndex={'2000'} 
 >
 
 <Link href={'/'}>

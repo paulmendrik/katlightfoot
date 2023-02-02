@@ -12,6 +12,8 @@ body {
 	height: 100%;
   font-family: var(--barlow-font);
 	color: #010101 !important;
+  scroll-snap-align: start;
+
 }
 
 p {
@@ -30,11 +32,6 @@ p a {
 }
 
 
-.header {
-  position: relative !important;
-  background: transparent !important;
-  z-index: 2000;
-}
 
 .header h1 {
     padding: 0 !important;
@@ -239,11 +236,6 @@ content: 'Size:  ';
   color: #010101;
 }
 
-
-.contact img {
-  margin-bottom: 1rem;
-  width: 100%;
-}
 
 .contact h4 {
   padding: 0;
