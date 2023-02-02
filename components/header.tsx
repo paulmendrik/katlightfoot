@@ -8,7 +8,7 @@ import { Flex, Spacer, Text } from '@chakra-ui/react';
 export const Header = () => {
 
 const router = useRouter();
-const black =  ( router.route != '/')
+const white =  (router.asPath == '/')
 
 
 return (
@@ -19,15 +19,15 @@ className={'header'}
 position={'relative'}
 top={'0'}
 py={['20px', '28px']} 
-background={black ? 'transparent' : '#ffffff'} 
-borderBottom={black ? '1px #ebebeb solid' : 'none'}
+background={white ? 'transparent' : '#ffffff'} 
+borderBottom={white ? 'none' : '1px #ebebeb solid'}
 justifyContent={"center"} 
 alignItems={"center"}
 zIndex={'2000'} 
 >
 
 <Link href={'/'}>
-<Text as={'h1'} fontSize={['1rem', '1.75rem']} color={black ? '#010101' : 'white'} >
+<Text as={'h1'} fontSize={['1rem', '1.75rem']} color={white ? 'white' : '#010101'} >
 Katharine Lightfoot
 </Text>
 </Link>

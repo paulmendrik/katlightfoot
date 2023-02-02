@@ -15,7 +15,7 @@ const [ isOpen, setOpen ] = useState(false);
 
 const router = useRouter()
 
-const black =  ( router.route != '/')
+const white =  (router.asPath == '/')
 
 
 
@@ -107,7 +107,7 @@ mt={'-1'}
 onTap={() => setOpen(!isOpen)}
 cursor={'pointer'}
 >
-{isOpen ? <CloseIcon boxSize={['4','4']} color={'white'} /> : <HamburgerIcon  boxSize={['6','8']} color={black ? '#A0AEC0' : 'white'} /> }  
+{isOpen ? <CloseIcon boxSize={['4','4']} color={'white'} /> : <HamburgerIcon  boxSize={['6','8']} color={white ? 'white' : '#A0AEC0'} /> }  
 </Box>
 
 <AnimatePresence>
