@@ -33,7 +33,7 @@ p a {
 
 
 
-.header h1 {
+.header h1, .branding h1 {
     padding: 0 !important;
     margin: 0 !important;
     line-height: 2;
@@ -94,7 +94,6 @@ p a {
   width: 100vw !important;
   height: 100vh !important;
 }
-
 
 h1.title {
   margin: 0 !important;

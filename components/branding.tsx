@@ -10,7 +10,7 @@ return (
 
 <Fragment>
 <Flex 
-className={'header'}
+className={'branding'}
 position={'relative'}
 top={'0'}
 py={['20px', '28px']} 
