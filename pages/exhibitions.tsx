@@ -42,14 +42,14 @@ Exhibitions
 </Text>
 </Box>
 
-<Box py={'1.5rem'}>
+<Box pt={'1.5rem'}>
 <PortableText key={prop._id} value={prop.content} />
 </Box>
 
 
 <SimpleGrid
 className='exhibition'
-mt={['1.5rem', '2rem']}
+mt={['1rem', '1rem']}
 as={motion.div} 
 variants={container}
 initial="hidden"

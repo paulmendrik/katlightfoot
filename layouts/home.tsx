@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { motion } from 'framer-motion';
-import { Header } from '../components/header'
+import { Branding } from '../components';
 import { Box } from '@chakra-ui/react';
 
 
@@ -17,7 +17,7 @@ exit={{ opacity: 0 }}
 transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 >
 <Box px={['15px','40px']}>
-<Header/>
+<Branding/>
 </Box>
 </motion.div>
 </Fragment>   

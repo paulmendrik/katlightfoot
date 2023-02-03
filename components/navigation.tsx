@@ -7,7 +7,8 @@ import { item } from '../lib/types';
 
 
 
-export const Nav = () => {
+export const Navigation = () => {
+
 
 const [ isOpen, setOpen ] = useState(false);
 
@@ -86,7 +87,7 @@ cursor={'pointer'}
 >
 {isOpen ? 
 <CloseIcon boxSize={['4','4']} color={'white'} /> : 
-<HamburgerIcon  boxSize={['6','8']} color={'#A0AEC0'} /> 
+<HamburgerIcon  boxSize={['6','8']} color={'white'} /> 
 }  
 </Box>
 
