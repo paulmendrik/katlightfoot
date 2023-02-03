@@ -1,4 +1,4 @@
-import { Branding } from './Branding';
+import { Branding } from './branding';
 import { Close } from './close';
 import { Header } from './header';
 import { Nav } from './nav';
