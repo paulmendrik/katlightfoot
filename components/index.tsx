@@ -1,11 +1,9 @@
-import { Branding } from './branding';
 import { Close } from './close';
 import { Header } from './header';
-import { Nav } from './nav';
 import { Navigation } from './navigation';
 import { Next } from './next';
 import { Previous } from './previous';
 import { Slider } from './slider';
 
-export {Branding, Close, Header, Nav, Navigation, Next, Previous, Slider};
+export {Close, Header, Navigation, Next, Previous, Slider};
 

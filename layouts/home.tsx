@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { Branding } from '../components';
+import { Header } from '../components';
 import { Box } from '@chakra-ui/react';
 
 
 export const HomeLayout = () => {
-
 
 return (
 
@@ -17,7 +17,7 @@ exit={{ opacity: 0 }}
 transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 >
 <Box px={['15px','40px']}>
-<Branding/>
+<Header nav={'white'} color={'white'} border={'none'}/>
 </Box>
 </motion.div>
 </Fragment>   

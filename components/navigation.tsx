@@ -5,12 +5,21 @@ import { Box, Flex, List, ListItem } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon} from '@chakra-ui/icons';
 import { item } from '../lib/types'; 
 
+type Props = {
+    color: any;
+}
 
 
-export const Navigation = () => {
+export const Navigation = ({color}: Props) => {
 
 
 const [ isOpen, setOpen ] = useState(false);
+
+const icon = {
+    hidden: { scale: 0, opacity: 0 },
+    show: { scale: 1, opacity: 1, transition: { delay: 0.5,  duration: 1,  ease: 'easeInOut'}},
+    exit: { scale: 0, opacity: 0 }
+}
 
 const menu = {
     initial: { y: '-2000px', height: 0, opacity: 0, transition: { duration: 2, type: 'tween'}},
@@ -85,10 +94,7 @@ mt={'-1'}
 onTap={() => setOpen(!isOpen)}
 cursor={'pointer'}
 >
-{isOpen ? 
-<CloseIcon boxSize={['4','4']} color={'white'} /> : 
-<HamburgerIcon  boxSize={['6','8']} color={'white'} /> 
-}  
+<HamburgerIcon  boxSize={['6','8']} color={color}  />  
 </Box>
 
 <AnimatePresence>
@@ -100,7 +106,25 @@ variants={menu}
 initial={"initial"}
 animate={"open"}
 exit={"closed"}
+color={color}
 >
+
+<Box 
+as={motion.div}
+className={'close'}
+variants={icon}
+initial="hidden"
+whileInView={"show"}
+position={'absolute'} 
+top={['1.25rem','2.5rem']}
+right={['15px','40px']}
+onTap={() => setOpen(!isOpen)}
+cursor={'pointer'}
+zIndex={'4000'}
+>
+<CloseIcon boxSize={['4','4']} color={'white'} /> 
+</Box>
+
 <Flex className='menu'>
 <List  
 mt={['-120','0']}

@@ -17,7 +17,7 @@ exit={{ x: -300, opacity: 0 }}
 transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 >
 <Box px={['15px','40px']}>
-<Header/>
+<Header nav={'#010101'} color={'#010101'} border={'1px #ebebeb solid'}/>
 {children}
 </Box>
 </motion.div>
