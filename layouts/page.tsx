@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { Header } from '../components/header'
-import { Box, Flex, Spacer, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 
 export const PageLayout = ({ children }: any) => {

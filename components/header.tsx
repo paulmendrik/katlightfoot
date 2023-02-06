@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
-import { Nav } from './nav';
 import { Navigation } from './navigation';
 import { Flex, Spacer, Text } from '@chakra-ui/react';
 

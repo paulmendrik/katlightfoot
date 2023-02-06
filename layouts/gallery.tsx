@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Header } from '../components/header'
 import { Box } from '@chakra-ui/react';
 

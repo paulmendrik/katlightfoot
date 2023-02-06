@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { motion } from 'framer-motion';
-import { Branding } from '../components';
 import { Header } from '../components';
 import { Box } from '@chakra-ui/react';
 
