@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { motion } from 'framer-motion';
-import { Header } from '../components/header'
+import { Header, Footer } from '../components/'
 import { Box } from '@chakra-ui/react';
 
 
@@ -21,6 +21,7 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 </Box>
 <Box  px={['15px','40px']}>
 {children}
+<Footer/>
 </Box>
 </motion.div>
 </Fragment>   

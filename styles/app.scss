@@ -10,6 +10,8 @@ html {
 body {
   margin: 0;
 	height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: var(--barlow-font);
 	color: #010101 !important;
   scroll-snap-align: start;
@@ -250,6 +252,15 @@ content: 'Size:  ';
 
 .contact p {
   color: #454545;
+}
+
+.footer {
+  font-family: var(--barlow-font);
+  font-weight: 100 !important;
+  font-variant: small-caps;
+  line-height: 3;
+  letter-spacing: 0.16em !important;
+  color: #737373 !important;
 }
 
 
