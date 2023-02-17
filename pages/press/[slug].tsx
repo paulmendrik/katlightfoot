@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import groq from 'groq';
 import { PortableText } from '@portabletext/react';
 import { PageLayout } from '../../layouts';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
 import client from '../../lib/sanity';
 
@@ -25,7 +24,13 @@ return (
 <Box className="press" mt={['1.5rem', '2rem']} mb={['2rem', '2rem']} > 
 <Box  fontSize={['1rem', '1rem']}>
 <Box float={['none', 'left']} mr={['0', '1.5rem']} mb={['1rem', '1.5rem']} >
-<Image  src={urlFor(data.image).url()} width={400} height={400} alt={data.title} /> 
+<Image  
+src={urlFor(data.image).url()} 
+width={['100%','400px']} 
+objectFit={'fill'}
+objectPosition={'center'}
+alt={data.title} 
+/> 
 </Box> 
 <PortableText value={data.content} />
 <Link href="/press">Back</Link>

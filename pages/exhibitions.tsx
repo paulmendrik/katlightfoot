@@ -1,14 +1,10 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image';
 import { motion  } from "framer-motion";
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
 import { PortableText } from '@portabletext/react';
-import { AspectRatio, Box, Card, Text, SimpleGrid } from '@chakra-ui/react';
+import { AspectRatio, Box, Image, Card, Text, SimpleGrid } from '@chakra-ui/react';
 import { PageLayout } from '../layouts';
 import { getExhibitionsContent } from '../lib/api';
 import { urlFor } from '../lib/api';
-import client from '../lib/sanity';
 
 
 type Props = {
@@ -65,7 +61,7 @@ spacingY={['10px', '10px']}
 <AspectRatio  ratio={1/1}>
 <Image
 src={urlFor(expo.image.asset).url()}
-width={100}
+width={['100%', '100%']}
 height={100}
 alt={expo.venue}
 />

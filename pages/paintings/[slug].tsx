@@ -76,9 +76,14 @@ animate={{ opacity: 1, scale: 1 }}
 exit={{ opacity: 0, scale: 0 }}
 transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 >
+{data.large ?
+<Image src={urlFor(data.large).url()}  width={'full'} />
+:
 <AspectRatio   ratio={1}>
 <Image src={urlFor(data.image).url()} />
 </AspectRatio>
+}
+
 </motion.div>
 </AnimatePresence>
 </Box>
@@ -93,6 +98,7 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 const query = groq`*[_type == 'gallery' && slug.current == $slug][0]{
   title,
   image,
+  large,
   slug,
   size,
   price,

@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { GalleryLayout } from '../../layouts';
 import { motion  } from "framer-motion";
 import { urlFor } from '../../lib/api';
-import { AspectRatio, Box, SimpleGrid, Text } from '@chakra-ui/react';
+import { AspectRatio, Box, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import { getAllGicleePrints } from '../../lib/api';
 
 type Props = {
@@ -47,8 +46,9 @@ export default function Giclee({ images }: Props) {
     <AspectRatio  ratio={1/1}>
     <Image
     src={urlFor(image.image).url()}
-    width={100}
-    height={100}
+    objectFit={'fill'}
+    objectPosition={'center'}
+    width={['100%','100%']}
     alt={image.title}
     />
     </AspectRatio>

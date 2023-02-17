@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { PageLayout } from '../../layouts';
-import { Box,Card, CardBody, SimpleGrid, Text,  Stack } from '@chakra-ui/react';
+import { Box,Card,Image,  Text,  Stack } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
 import { getAllPressArticles } from '../../lib/api'
 
@@ -39,8 +38,9 @@ Press
 <Box w={['100%', '25%']}>
 <Image 
 src={urlFor(prop.image).url()} 
-width={500} 
-height={500} 
+width={['100%','500px']} 
+objectFit={'fill'}
+objectPosition={'center'}
 alt={prop.title} 
 />
 </Box>

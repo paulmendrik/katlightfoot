@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../lib/api';
 import { PageLayout } from '../layouts';
-import { Box,Card, CardBody, Text, SimpleGrid } from '@chakra-ui/react';
+import {AspectRatio, Box, Image, Text } from '@chakra-ui/react';
 import { getAboutPage } from '../lib/api';
 
 type Props = {
@@ -24,8 +23,16 @@ return (
 <Box className="about" mt={['1.5rem', '2rem']} > 
 {props.map((prop: { _id: any; image: any; title: string; content: any; }) =>
 <Box >
-<Box  ml={['0','4rem']} mb={['1rem', '2rem']} float={['none', 'right']}  >
-<Image  src={urlFor(prop.image).url()} width={400} height={400} alt={prop.title} /> 
+<Box className='image'  ml={['0','4rem']} mb={['1rem', '2rem']} float={['none', 'right']}  >
+
+<Image  
+src={urlFor(prop.image).url()} 
+width={['100%','400px']}
+objectFit={'fill'} 
+objectPosition={'center'}
+alt={prop.title} 
+/> 
+
 </Box>
 <PortableText value={prop.content} />
 </Box>

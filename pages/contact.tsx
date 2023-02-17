@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
-import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../lib/api';
 import { PageLayout } from '../layouts';
-import { Box,Card,CardBody,Text } from '@chakra-ui/react';
+import { Box,Card,CardBody,Image, Text } from '@chakra-ui/react';
 import { getContactPage } from '../lib/api';
 
 type Props = {
@@ -23,8 +22,9 @@ return (
 <Box mb={['0','1rem']}  w={['100%', 'auto']}>
 <Image 
 src={urlFor(prop.image).url()} 
-width={500} 
-height={500} 
+width={['100%','500px']}
+objectFit={'fill'}
+objectPosition={'center'}
 alt={prop.title} 
 />
 </Box>
