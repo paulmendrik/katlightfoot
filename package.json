@@ -30,6 +30,7 @@
     "react-alice-carousel": "2.7.0",
     "react-icons": "^4.7.1",
     "sass": "1.56.2",
+    "swiper": "^9.1.0",
     "themify-icons": "^1.0.0"
   }
 }

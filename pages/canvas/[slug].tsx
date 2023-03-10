@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
-import { Close, Next, Previous } from '../../components';
+import { Close } from '../../components';
 import { AspectRatio, Box, Card, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
 import client from '../../lib/sanity';
@@ -21,15 +21,6 @@ return (
 <PaintingLayout>
 
 <Close props={`/canvas/#${data.order}`}/>
-
-{data.previous ? 
-<Previous props={data.previous.slug}/>
- : null }
-
-{data.next ?
-<Next props={data.next.slug} />
- : null }
-
 
 <Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >
 

@@ -1,9 +1,13 @@
-import React, { Fragment } from 'react';
+import React, {useState, Fragment, useEffect} from 'react';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
-import { Close, Next, Previous } from '../../components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/thumbs";
+import { Close } from '../../components';
 import { AspectRatio, Box, Card, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
 import client from '../../lib/sanity';
@@ -15,24 +19,17 @@ type Props = {
 
 export default function Painting({ data }: Props) {
 
+const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
 const router = useRouter();
+
 
 return (
 <Fragment>
 <PaintingLayout>
+
 <Close props={`/paintings/#${data.order}`}/>
 
-{data.previous ? 
-<Previous props={data.previous.slug}/>
- : null }
-
-{data.next ?
-<Next props={data.next.slug} />
- : null }
-
-<Card className='details' mt={['80px', '120px']} direction={['column-reverse', 'row']} >
-
-<Box  py={['40px', '80px']}  width={['100%','25%']}> 
 <AnimatePresence>
 <motion.div
 key={router.asPath}
@@ -41,6 +38,11 @@ animate={{ y: 0, opacity: 1 }}
 exit={{ y: 100, opacity: 0 }}
 transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 >
+
+<Card className='details' position={'relative'} mt={['80px', '100px']} direction={['column-reverse', 'row']} >
+
+<Box  py={['20px', '40px']}  width={['100%','40%']}> 
+
 <Flex  alignItems={'flex-start'} height={'100%'}>
 <VStack alignItems={'start'}>
 
@@ -63,38 +65,55 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 
 </VStack>
 </Flex>
-</motion.div>
-</AnimatePresence>
 </Box>
 
-<Box className='painting'  width={['100%','75%']} >
-<AnimatePresence>
-<motion.div 
-key={router.asPath}
-initial={{ opacity: 0, scale: 0 }}
-animate={{ opacity: 1, scale: 1 }}
-exit={{ opacity: 0, scale: 0 }}
-transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
+<Box className='painting'  width={['100%','60%']} >
+<Swiper
+slidesPerView={1}
+thumbs={{ swiper: thumbsSwiper }}
+modules={[FreeMode, Navigation, Thumbs]}
 >
-{data.large ?
-<Image src={urlFor(data.large).url()}  width={'full'} />
-:
+{data.slides.map((slide: { image: any; }, i: React.Key | null | undefined) =>
+<SwiperSlide key={i}>
 <AspectRatio   ratio={1}>
-<Image src={urlFor(data.image).url()} />
+<Image src={urlFor(slide.image.asset).url()} />
 </AspectRatio>
-}
+</SwiperSlide>
+)}
+</Swiper>
 
-</motion.div>
-</AnimatePresence>
+<Box position={'absolute'} pr={['0', '20px']} left={0} top={['95%','200px']} width={['100%','40%']}> 
+<Text as={'p'} className={'more'} fontSize={['1rem','1.25rem']}>Further Images</Text>
+<Swiper
+onSwiper={setThumbsSwiper}
+slidesPerView={3}
+spaceBetween={0}
+freeMode={true}
+watchSlidesProgress={true}
+modules={[FreeMode, Navigation, Thumbs]}
+>
+
+{data.slides.map((slide: { image: any; }, i: React.Key | null | undefined) =>
+<SwiperSlide key={i}>
+<Image
+padding={['2px','4px']}
+mt={['2px','10px']}
+src={urlFor(slide.image.asset).url()}
+width={['120px','160px']}
+/>
+</SwiperSlide>
+)}
+</Swiper>
+</Box>
 </Box>
 
 </Card> 
+</motion.div>
+</AnimatePresence>
 </PaintingLayout>  
 </Fragment>
 )
 }
-
-
 const query = groq`*[_type == 'gallery' && slug.current == $slug][0]{
   title,
   image,
@@ -104,6 +123,8 @@ const query = groq`*[_type == 'gallery' && slug.current == $slug][0]{
   price,
   sold,
   order,
+  views,
+  "slides": views[],
   "current": { 
     "slug": slug.current,title,order 
   },
@@ -134,23 +155,4 @@ export const getStaticPaths = async () => {
     fallback: 'blocking',
   }
 }
-
-
-/***
-
-*[_type == 'gallery' && slug.current == $slug]  {
-  "current": { 
-    "slug": slug.current,title,order 
-  },
-  "next": *[_type == 'gallery' && ^._createdAt < _createdAt] | order(_createdAt asc)[0]{ 
-      "slug": slug.current,title,order
-  },
-"previous": *[_type == 'gallery' && ^._createdAt > _createdAt] | order(_createdAt asc)[-1]{ 
-      "slug": slug.current, title,order
-  },
-}
-***/
-
-
-
 

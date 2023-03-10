@@ -1,4 +1,3 @@
-
 html {
   margin: 0;
   height: 100%;
@@ -10,12 +9,8 @@ html {
 body {
   margin: 0;
 	height: 100%;
-  min-height: 100vh;
-  flex-direction: column;
   font-family: var(--barlow-font);
 	color: #010101 !important;
-  scroll-snap-align: start;
-
 }
 
 p {
@@ -34,8 +29,13 @@ p a {
 }
 
 
+.header {
+  position: relative !important;
+  background: transparent !important;
+  z-index: 2000;
+}
 
-.header h1, .branding h1 {
+.header h1 {
     padding: 0 !important;
     margin: 0 !important;
     line-height: 2;
@@ -49,11 +49,7 @@ p a {
 .icon {
   padding: 0 !important;
   font-weight: 200 !important;
-}
-
-.close {
-  padding: 0 !important;
-  font-weight: 200 !important;
+  z-index: 4000 !important;
 }
 
 .navigation {
@@ -101,6 +97,7 @@ p a {
   height: 100vh !important;
 }
 
+
 h1.title {
   margin: 0 !important;
   line-height: 2;
@@ -109,16 +106,15 @@ h1.title {
   text-transform: uppercase !important;
   letter-spacing: 0.16em !important;
   backface-visibility: hidden !important;
-  color: #010101 !important;
 }
 
 h2.subtitle {
+  border-bottom: .0625rem solid #e5e5e5;
   font-family: var(--barlow-font);
-  font-weight: 100 !important;
+  font-weight: 300 !important;
   font-variant: small-caps;
-  line-height: 2;
-  letter-spacing: 0.16em !important;
-  color: #010101 !important;
+  letter-spacing: .03rem;
+  color: #010101;
 }
 
 .gallery, .about, .giclee, .canvas, .exhibitions, .press, .contact {
@@ -143,7 +139,7 @@ h2.subtitle {
 }
 
 .details p.name {
-  font-weight: 500 !important;
+  font-weight: 300 !important;
   text-transform: uppercase;
 }
 
@@ -156,7 +152,7 @@ content: 'Size:  ';
 }
 
 .details p.printsize::before {
-  content: 'Size:  ';
+  content: 'Print Size:  ';
 }
   
 .details p.printsize::after {
@@ -164,7 +160,7 @@ content: 'Size:  ';
 }
 
 .details p.mountedsize::before {
-  content: 'Mounted:  ';
+  content: 'Mounted Size:  ';
 }
   
 .details p.mountedsize::after {
@@ -172,7 +168,7 @@ content: 'Size:  ';
 }
 
 .details p.framedsize::before {
-  content: 'Framed:  ';
+  content: 'Framed Size:  ';
 }
   
 .details p.framedsize::after {
@@ -193,6 +189,11 @@ content: 'Size:  ';
 
 .details p.sold {
   font-weight: 300;
+}
+
+.details p.more {
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .exhibitions {
@@ -242,6 +243,11 @@ content: 'Size:  ';
 }
 
 
+.contact img {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
 .contact h4 {
   padding: 0;
   margin-top: 1rem;
@@ -252,15 +258,6 @@ content: 'Size:  ';
 
 .contact p {
   color: #454545;
-}
-
-.footer {
-  font-family: var(--barlow-font);
-  font-weight: 100 !important;
-  font-variant: small-caps;
-  line-height: 3;
-  letter-spacing: 0.16em !important;
-  color: #737373 !important;
 }
 
 
