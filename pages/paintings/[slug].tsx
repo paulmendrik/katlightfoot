@@ -1,12 +1,9 @@
-import React, {useState, Fragment, useEffect} from 'react';
+import React, {Fragment, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import groq from 'groq';
 import { PaintingLayout } from '../../layouts';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs } from "swiper";
-import "swiper/css";
-import "swiper/css/thumbs";
+import { Glider } from '../../components';
 import { Close } from '../../components';
 import { AspectRatio, Box, Card, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import { urlFor } from '../../lib/api';
@@ -17,12 +14,10 @@ type Props = {
   data: any;
 }
 
+
 export default function Painting({ data }: Props) {
 
-const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
 const router = useRouter();
-
 
 return (
 <Fragment>
@@ -67,45 +62,7 @@ transition={{ delay: 0.1 , type: 'tween', ease: 'linear'}}
 </Flex>
 </Box>
 
-<Box className='painting'  width={['100%','60%']} >
-<Swiper
-slidesPerView={1}
-thumbs={{ swiper: thumbsSwiper }}
-modules={[FreeMode, Navigation, Thumbs]}
->
-{data.slides.map((slide: { image: any; }, i: React.Key | null | undefined) =>
-<SwiperSlide key={i}>
-<AspectRatio   ratio={1}>
-<Image src={urlFor(slide.image.asset).url()} />
-</AspectRatio>
-</SwiperSlide>
-)}
-</Swiper>
-
-<Box position={'absolute'} pr={['0', '20px']} left={0} top={['95%','200px']} width={['100%','40%']}> 
-<Text as={'p'} className={'more'} fontSize={['1rem','1.25rem']}>Further Images</Text>
-<Swiper
-onSwiper={setThumbsSwiper}
-slidesPerView={3}
-spaceBetween={0}
-freeMode={true}
-watchSlidesProgress={true}
-modules={[FreeMode, Navigation, Thumbs]}
->
-
-{data.slides.map((slide: { image: any; }, i: React.Key | null | undefined) =>
-<SwiperSlide key={i}>
-<Image
-padding={['2px','4px']}
-mt={['2px','10px']}
-src={urlFor(slide.image.asset).url()}
-width={['120px','160px']}
-/>
-</SwiperSlide>
-)}
-</Swiper>
-</Box>
-</Box>
+<Glider data={data} />
 
 </Card> 
 </motion.div>

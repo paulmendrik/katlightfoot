@@ -5,6 +5,7 @@ import { Navigation } from './navigation';
 import { Next } from './next';
 import { Previous } from './previous';
 import { Slider } from './slider';
+import { Glider } from './swiper';
 
-export {Close, Header, Footer, Navigation, Next, Previous, Slider};
+export {Close, Header, Footer, Navigation, Next, Previous, Slider, Glider};
 
