@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;900&display=swap');
+
 html {
   margin: 0;
   height: 100%;
 	background: #fff;
-	font-family: var(--barlow-font);
+	font-family: 'Barlow', sans-serif;
 	color: #010101 !important;
 }
 
 body {
   margin: 0;
 	height: 100%;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
 	color: #010101 !important;
 }
 
 p {
   margin: 0 !important;
   padding: 0 !important;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 200 !important;
   line-height: 2.3 !important;
   color: #010101 !important;
@@ -39,7 +41,7 @@ p a {
     padding: 0 !important;
     margin: 0 !important;
     line-height: 2;
-    font-family: var(--barlow-font);
+    font-family: 'Barlow', sans-serif;
     font-weight: 200 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.16em !important;
@@ -68,7 +70,7 @@ p a {
   align-items: center !important;
   width: 100vw !important;
   height: 100vh !important;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 200 !important;
 }
 
@@ -78,7 +80,7 @@ p a {
 }
 
 .menu a {
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   width: 100% !important;
   color: white !important;
   text-align: center !important;
@@ -101,7 +103,7 @@ p a {
 h1.title {
   margin: 0 !important;
   line-height: 2;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 200 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.16em !important;
@@ -110,7 +112,7 @@ h1.title {
 
 h2.subtitle {
   border-bottom: .0625rem solid #e5e5e5;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 300 !important;
   font-variant: small-caps;
   letter-spacing: .03rem;
@@ -118,7 +120,7 @@ h2.subtitle {
 }
 
 .gallery, .about, .giclee, .canvas, .exhibitions, .press, .contact {
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 400;
   color: #010101;
 }
@@ -129,16 +131,18 @@ h2.subtitle {
   border-radius: 0 !important;
   box-shadow: none !important;
   background: none !important;
-  font-family: var(--barlow-font) !important;
+  font-family: 'Barlow', sans-serif;
 }
 
 .details p {
+  font-family: 'Barlow', sans-serif;
   font-weight: 200;
   text-align: left !important;
   color: #585858 !important;
 }
 
 .details p.name {
+  font-family: 'Barlow', sans-serif;
   font-weight: 300 !important;
   text-transform: uppercase;
 }
@@ -192,6 +196,7 @@ content: 'Size:  ';
 }
 
 .details p.more {
+  font-family: 'Barlow', sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -201,10 +206,11 @@ content: 'Size:  ';
   border-radius: 0 !important;
   box-shadow: none !important;
   background: none !important;
-  font-family: var(--barlow-font) !important;
+  font-family: 'Barlow', sans-serif;
 }
 
 .exhibitions p {
+  font-family: 'Barlow', sans-serif;
   font-weight: 300;
   line-height: 1.5 !important;
   text-align: left !important;
@@ -216,12 +222,12 @@ content: 'Size:  ';
   border-radius: 0 !important;
   box-shadow: none !important;
   background: none !important;
-  font-family: var(--barlow-font) !important;
+  font-family: 'Barlow', sans-serif;
 }
 
 .press h3 {
   padding-top: 0 !important;
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 400 !important;
   font-variant: small-caps !important;
   letter-spacing: .03rem;
@@ -231,6 +237,7 @@ content: 'Size:  ';
 
 .press  p {
   margin-bottom: 1rem !important;
+  font-family: 'Barlow', sans-serif;
   font-weight: 300;
   line-height: 1.5 !important;
   text-align: left !important;
@@ -238,6 +245,7 @@ content: 'Size:  ';
 }
 
 .press a {
+  font-family: 'Barlow', sans-serif;
   font-weight: 400 !important;
   color: #010101;
 }
@@ -251,19 +259,21 @@ content: 'Size:  ';
 .contact h4 {
   padding: 0;
   margin-top: 1rem;
+  font-family: 'Barlow', sans-serif;
   font-size: 1.5rem;
   line-height: 1;
   color: #454545;
 }
 
 .contact p {
+  font-family: 'Barlow', sans-serif;
   color: #454545;
 }
 
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .gallery h4.title {
-  font-family: var(--barlow-font);
+  font-family: 'Barlow', sans-serif;
   font-weight: 200 !important;
   font-style: italic !important;
   line-height: 1;
